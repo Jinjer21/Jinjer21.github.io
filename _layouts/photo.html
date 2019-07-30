@@ -1,10 +1,14 @@
----
-    layout: default
+--- 
+layout: default 
 ---
 
-<img src="/{{page.image_path}}">
- {% for tag in page.tags %}
-<a href="/tags/{{tag}}">{{tag}}</a>
- {% endfor %}
+<img src="/assets/images/{{page.image_path}}"> 
+<ul>
+    {% for tag in page.tags %}
+        <li>
+            <a href="/tags/{{tag}}">{{tag}}</a>
+        </li>  
+    {% endfor %}
+</ul>
 
 {{content}}

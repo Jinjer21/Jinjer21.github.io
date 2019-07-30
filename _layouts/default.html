@@ -8,9 +8,11 @@
 </head>
 
 <body>
-{% include nav.html %}
-    <h2>{{page.title}}</h2>
-    {{content}}
+    {% include nav.html %}
+    <main>
+        {{content}}
+    </main>
+
 </body>
 
 </html>
