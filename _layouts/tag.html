@@ -1,0 +1,11 @@
+---
+    layout: default
+---
+
+
+ {% for item in site.photos %}
+  {% if item.tags contains page.tag %}
+    <a href="{{item.url}}"><img src="/{{item.image_path}}"></a>
+    
+    {% endif %}
+ {% endfor %}

@@ -1,0 +1,22 @@
+--- 
+layout: default 
+title: Photos 
+--- 
+<ul>
+    {% for tag in site.tags %}
+        <li>
+            <a href="{{tag.url}}">
+                {{tag.title}}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% for photo in site.photos %}
+<div>
+    <a href="{{photo.url}}">
+        <img src="{{ photo.image_path }}" alt="{{photo.title}}"></a>
+    </a>
+</div>
+{% endfor %}

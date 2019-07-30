@@ -1,0 +1,21 @@
+<header>
+<h1>Jack O'Mahony</h1>
+<nav id="main-navigation">
+    <ul>
+        {% for item in site.data.nav %}
+            <li>
+                <a href="{{item.link}}" {% if page.url==item.link %} class="active" {% endif %}>{{item.name}}</a> 
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+<nav id="social-navigation">
+    <ul>
+    {% for item in site.data.social %}
+    <li>
+        <a href="{{item.link}}">{{item.name}}</a>
+    </li>
+    {% endfor %}
+    </ul>
+</nav>
+</header>
