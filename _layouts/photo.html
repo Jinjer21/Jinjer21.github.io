@@ -1,14 +1,37 @@
 --- 
 layout: default 
 ---
+<div id="photo">
+    <div id="image-container">
+        <img src="/assets/images/{{page.image_path}}">
+    </div>
+    <div id="info-container">
 
-<img src="/assets/images/{{page.image_path}}"> 
-<ul>
-    {% for tag in page.tags %}
-        <li>
-            <a href="/tags/{{tag}}">{{tag}}</a>
-        </li>  
-    {% endfor %}
-</ul>
+        <button id="info-button" onclick="infoClicked()">i</button>
+        <ul id="exif">
+            <li>Camera: </li>
+            <li>Lens: </li>
+            <li>Aperture: </li>
+            <li>Shutter Speed: </li>
+            <li>ISO: </li>
+        </ul>
 
-{{content}}
+
+        <ul id="photo-tags">
+            {% for tag in page.tags %}
+            <li>
+                <a href="/tags/{{tag}}">{{tag}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    function infoClicked(){
+        var exif = document.getElementById("exif");
+        exif.classList.toggle("visible");
+    }
+</script>
