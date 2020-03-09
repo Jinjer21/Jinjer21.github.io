@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+
+    aside {
+        width: 240px;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        header {
+            h1 {
+                margin-bottom: 100px;
+                text-transform: uppercase;
+            }
+        }
+
+        nav{
+            flex: 1 0 auto;
+        }
+
+        ul {
+            li {
+                margin-bottom: 12px;
+
+                a:not(.active) {
+                    color: grey;
+                }
+            }
+        }
+
+    }
+
+    main {
+        overflow: auto;
+        flex: 1 0 auto;
+    }
+}

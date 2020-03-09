@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-repeat: no-repeat;
+    outline: 0;
+    height: auto;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+    box-sizing: border-box;
+    font-weight: normal;
+    font-family: sans-serif;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+body{
+    padding: 16px;
+    min-height: 100vh;
+
+    @media screen and (min-width: 768px){
+        padding: 40px;
+    }
+
+}
+
+.___gatsby{
+    height: 100%;
+}
