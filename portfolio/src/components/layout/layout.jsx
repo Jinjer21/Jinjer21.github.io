@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
                         </li>
                         <ul className={Styles.subMenu}>
                             {
-                                folders.allDirectory.edges.map(({ node }) => <li key={node.id}><Link to={`/${node.base}/`}>{node.base}</Link></li>)
+                                folders.allDirectory.edges.map(({ node }) => <li key={node.id}><Link activeClassName={Styles.active} to={`/${node.base}/`}>{node.base}</Link></li>)
                             }
                         </ul>
                         <li>

@@ -10,8 +10,8 @@ const Category = ({ pageContext, data }) => {
 export default Category;
 
 export const pageQuery = graphql`
-query PhotosInFolder($path: String!){
-  allFile(filter: {dir: {eq: $path}}) {
+query PhotosInFolder($directory: String!){
+  allFile(filter: {dir: {eq: $directory}}) {
     edges {
       node {
         id
