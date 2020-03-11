@@ -1,20 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display:wght@900&display=swap');
+
 * {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    background-repeat: no-repeat;
-    outline: 0;
-    height: auto;
-    text-decoration: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 0;
-    border-radius: 0;
-    box-sizing: border-box;
-    font-weight: normal;
-    font-family: sans-serif;
-    color: #333;
+    &:not(picture){
+        margin: 0;
+        padding: 0;
+        position: relative;
+        background-repeat: no-repeat;
+        outline: 0;
+        height: auto;
+        text-decoration: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        border-radius: 0;
+        box-sizing: border-box;
+        font-weight: normal;
+        font-family: 'Lato', sans-serif;
+        color: var(--text-color);
+    }
+    
 }
 
 ul {
@@ -22,15 +27,36 @@ ul {
 }
 
 body{
-    padding: 16px;
-    min-height: 100vh;
+    background-color: var(--background);
+    -webkit-column-break-inside:avoid;
+    transition: all 0.5s;
 
-    @media screen and (min-width: 768px){
-        padding: 40px;
+    &.light-mode{
+        --background: white;
+        --text-color: #333;
+    }
+
+    &.dark-mode{
+        --background: #111;
+        --text-color: white;
     }
 
 }
 
-.___gatsby{
-    height: 100%;
+:root {
+    --background: white;
+    --text-color: #333;
+
+    @media (prefers-color-scheme: dark){
+        --background: #111;
+        --text-color: white;
+    }
 }
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+     *{
+        font-family: 'Playfair Display', serif;
+    }
+}
+

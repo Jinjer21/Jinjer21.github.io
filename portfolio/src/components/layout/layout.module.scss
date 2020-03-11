@@ -1,16 +1,55 @@
 .container {
-    display: flex;
+
+    height: 100%;
+
+    @media screen and (min-width: 768px){
+        padding: 2.5rem;
+        display: flex;
+        height: 100vh;
+        padding-bottom: 0;
+    }
 
     aside {
-        width: 240px;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
+        width: 100%;
+        position: sticky;
+        top: 0;
+        padding: 1rem;
+        background-color: var(--background);
+        transition: 0.5s 0 background-color;
+        z-index: 2;
+        
+        
+        @media screen and (min-width: 768px){
+            width: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            padding: 0;
+            padding-bottom: 2.5rem;
+        }
 
         header {
             h1 {
-                margin-bottom: 100px;
-                text-transform: uppercase;
+                @media screen and (min-width: 768px){
+                    margin-bottom: 6rem;
+                    text-align: left;
+                    font-size: 2.5rem;
+                }
+                letter-spacing: 0.05rem;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+
+            .menuButton {
+                background-color: transparent;
+                padding: 1rem;
+                svg{
+                    width: 1rem;
+                }
+                @media screen and (min-width: 768px){
+                    display: none;
+                }
             }
         }
 
@@ -19,9 +58,13 @@
         }
 
         ul {
-            li {
-                margin-bottom: 12px;
 
+            &.subMenu{
+                padding-left: 1rem;
+            }
+            li {
+                margin-bottom: 1rem;
+                text-transform: capitalize;
                 a:not(.active) {
                     color: grey;
                 }
@@ -33,5 +76,72 @@
     main {
         overflow: auto;
         flex: 1 0 auto;
+        padding: 1rem;
+
+        @media screen and (min-width: 768px){
+            padding: 0;
+        }
     }
 }
+
+.toggleButton{
+    padding: 1rem;
+    background-color: transparent;
+
+    > div {
+        position: relative;
+    }
+
+    svg {
+        height: 1.5rem;
+        width: 1.5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        &:not(:first-of-type){
+            height: 0.75rem;
+            top: 0.4rem;
+            z-index: 10;
+        }
+
+        path {
+            color: red;
+        }
+    }
+}
+
+.mobileMenuOpen{
+    nav {
+        display: unset;
+    }
+}
+
+.mobileMenuClosed{
+    nav {
+        display: none;
+            @media screen and (min-width: 768px){
+                display: unset;
+            }
+    }
+}
+
+.headerThemeToggle{
+    display: none;
+    @media screen and (min-width: 768px){
+        display: unset;
+        position: fixed;
+        top: 0;
+        right: 0;
+    }
+}
+
+.footerThemeToggle{
+    @media screen and (min-width: 768px){
+        display: none;
+    }
+}
+
+
+
+
